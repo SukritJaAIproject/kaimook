@@ -1,0 +1,2 @@
+-	download shape_predictor_68_face_landmarks.dat
+-	python eye_movement_rev2.py -numpy_path numpy_samples.npy -landmarks_path shape_predictor_68_face_landmarks.dat
