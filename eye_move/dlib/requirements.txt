@@ -1,0 +1,8 @@
+certifi==2021.10.8
+dlib==19.23.1
+numpy==1.22.3
+opencv-python==4.5.5.64
+pip==21.2.4
+setuptools==58.0.4
+wheel==0.37.1
+wincertstore==0.2
