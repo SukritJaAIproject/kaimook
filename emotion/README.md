@@ -1,0 +1,2 @@
+-	Weight model = https://drive.google.com/drive/folders/1bR0wTOSDXgwhYApBCPdl9HiAa-ZOJYeo?usp=sharing
+-	python resnet50_v3.py --numpy_path numpy_samples.npy --model_path model/
