@@ -1,0 +1,1 @@
+-	python eye_media1.py --numpy_path numpy_samples.npy --fix_size False --img_size 224  --scale_percent 80
