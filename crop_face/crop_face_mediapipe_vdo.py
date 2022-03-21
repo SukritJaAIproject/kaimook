@@ -44,7 +44,7 @@ def caminfo(vdo_name):
   fps    = cap.get(cv2.CAP_PROP_FPS)
   return total_frames, fps
 
-def crop_face_med(vdo_path, img_size):
+def crop_face_med(vdo_path, img_size, out_path):
   T_frames, fps = caminfo(vdo_path)
   print('FPS = ', fps, ' Total Frames = ', T_frames)
   cropped_face_numpy = []
@@ -77,7 +77,7 @@ def crop_face_med(vdo_path, img_size):
   out.release()  
   return resized_imgs
 
-resized_img = crop_face_med(args.vdo_path, args.img_size)
+resized_img = crop_face_med(args.vdo_path, args.img_size, args.out_path)
 out_path = args.out_path
 #cv2.imwrite(out_path+time_now+'.png', resized_img)
 print(resized_img.shape)
