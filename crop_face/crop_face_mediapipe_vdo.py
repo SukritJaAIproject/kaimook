@@ -4,6 +4,7 @@ import mediapipe as mp
 import argparse
 import datetime
 from tqdm import tqdm
+import tensorflow as tf
 time_now  = datetime.datetime.now().strftime('%m_%d_%Y_%H_%M_%S') 
 
 max_num_faces = 1
