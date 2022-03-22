@@ -69,7 +69,7 @@ def crop_face_med(vdo_path, img_size, out_path):
             return 'No face detected'
     cropped_face_numpy.append(cropped)
   resized_imgs = np.array(cropped_face_numpy)
-
+  frameSize = (img_size, img_size) 
   out = cv2.VideoWriter(out_path+'Crop_Video.mp4',cv2.VideoWriter_fourcc('m', 'p', '4', 'v'), 5, frameSize)
   for i in range(resized_imgs.shape[0]):
       img = tf.image.resize_with_pad(resized_imgs[i], target_height=img_size, target_width=img_size, method=tf.image.ResizeMethod.BILINEAR, antialias=False).numpy().astype('uint8')
