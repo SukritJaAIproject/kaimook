@@ -58,19 +58,24 @@ def crop_face_med(vdo_path, img_size, out_path):
     results = face_mesh.process(img)
     img.flags.writeable = True
     img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
-    if results.multi_face_landmarks is not None:
-        for face_landmarks in results.multi_face_landmarks:
-          try:
-            brect = calc_bounding_rect(img, face_landmarks)
-            img = img[brect[1]:brect[3],brect[0]:brect[2]]
-            cropped = cv2.resize(img, (img_size, img_size), interpolation=cv2.INTER_AREA)
-          except:
-            print('Error')
-            return 'No face detected'
-    cropped_face_numpy.append(cropped)
-  resized_imgs = np.array(cropped_face_numpy)
-  frameSize = (img_size, img_size) 
-  out = cv2.VideoWriter(out_path+'Crop_Video.mp4',cv2.VideoWriter_fourcc('m', 'p', '4', 'v'), 5, frameSize)
+    
+    try:
+        if results.multi_face_landmarks is not None:
+            for face_landmarks in results.multi_face_landmarks:
+              try:
+                brect = calc_bounding_rect(img, face_landmarks)
+                img = img[brect[1]:brect[3],brect[0]:brect[2]]
+                cropped = cv2.resize(img, (img_size, img_size), interpolation=cv2.INTER_AREA)
+              except:
+                print('Error: No face detected')
+                #return 'No face detected'
+        cropped_face_numpy.append(cropped)
+      resized_imgs = np.array(cropped_face_numpy)
+      frameSize = (img_size, img_size) 
+      out = cv2.VideoWriter(out_path+'Crop_Video.mp4',cv2.VideoWriter_fourcc('m', 'p', '4', 'v'), 5, frameSize)
+    except:
+        print('main error')
+     
   for i in range(resized_imgs.shape[0]):
       img = tf.image.resize_with_pad(resized_imgs[i], target_height=img_size, target_width=img_size, method=tf.image.ResizeMethod.BILINEAR, antialias=False).numpy().astype('uint8')
       out.write(img)
