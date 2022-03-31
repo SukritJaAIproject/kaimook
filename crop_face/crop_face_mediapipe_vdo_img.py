@@ -64,11 +64,11 @@ def crop_face_med(img_path, vdo_path, img_size, out_path, input_type):
             #[y:y+h, x:x+w]
             y, y_h, x, x_w = brect[1], brect[3], brect[0], brect[2]
             img = img[brect[1]:brect[3],brect[0]:brect[2]]
-            #cropped = cv2.resize(img, (img_size, img_size), interpolation=cv2.INTER_AREA)
+            cropped = cv2.resize(img, (img_size, img_size), interpolation=cv2.INTER_AREA)
             #cropped = cv2.resize(img, (img_size, img_size), interpolation=cv2.INTER_CUBIC)
             #cropped = cv2.resize(img, (img_size, img_size), interpolation=cv2.INTER_LANCZOS4)
             #cropped = cv2.resize(img, (img_size, img_size), interpolation=cv2.INTER_NEAREST)
-            cropped = cv2.resize(img, (img_size, img_size), interpolation=cv2.INTER_LINEAR)    
+            #cropped = cv2.resize(img, (img_size, img_size), interpolation=cv2.INTER_LINEAR)    
           except:
             print('Error')
     return (cropped, [y, y_h, x, x_w])
