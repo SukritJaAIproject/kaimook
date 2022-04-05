@@ -1,0 +1,1 @@
+python run.py img_path frame_031607.png
