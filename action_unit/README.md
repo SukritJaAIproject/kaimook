@@ -2,5 +2,5 @@
 - complete files
 	- https://drive.google.com/drive/folders/1IR9zmGzoAkgM7O62f9x4t2izxEj2Iseh?usp=sharing
 
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+![vis img](https://github.com/SukritJaAIproject/kaimook/blob/main/action_unit/img1.png?raw=true)
+![value](https://github.com/SukritJaAIproject/kaimook/blob/main/action_unit/img2.png?raw=true)
